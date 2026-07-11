@@ -25,7 +25,7 @@ function loadProductGrid() {
 
     if (!container) return;
 
-    fetch("/api/data")
+fetch("./data/database.json")
         .then(res => res.json())
         .then(data => {
 
@@ -316,7 +316,7 @@ function loadServiceGrid() {
 
     if (!container) return;
 
-    fetch("/api/data")
+fetch("./data/database.json")
         .then(res => res.json())
         .then(data => {
 
@@ -411,7 +411,7 @@ function viewServiceDetail(id){
 
     console.log("ID dari tombol:", id);
 
-    fetch("/api/data")
+fetch("./data/database.json")
     .then(res => res.json())
     .then(data => {
 
@@ -1181,7 +1181,7 @@ window.addEventListener("scroll", () => {
 
 function viewNewsDetail(id){
 
-    fetch("/api/data")
+fetch("./data/database.json")
     .then(res=>res.json())
     .then(data=>{
 
@@ -1232,6 +1232,17 @@ function viewNewsDetail(id){
     });
 
 }
+setTimeout(()=>{
+
+    document.getElementById("service-title").textContent=service.title;
+
+    document.getElementById("service-description").textContent=service.description;
+
+    document.getElementById("service-estimation").textContent=service.estimation;
+
+    document.getElementById("service-document").textContent=service.documents;
+
+},200);
 
 // ===============================
 // GLOBAL EXPORT
