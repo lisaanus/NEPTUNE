@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. Neptune Eka Sarana - Marine Service & Safety Equipment</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maritimeBlue: '#0B2447',
+                        oceanBlue: '#19376D',
+                        skyBlue: '#A5D7E8',
+                        safetyOrange: '#FF6B35'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efek transisi halus saat perpindahan halaman */
+        #content-frame {
+            transition: opacity 0.2s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- NAVIGATION BAR -->
+<nav class="bg-blue-950 text-white fixed top-0 left-0 w-full z-50 shadow-md">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="h-16 flex items-center justify-between">
+
+            <!-- Logo -->
+            <div
+                onclick="switchPage('beranda')"
+                class="flex items-center gap-3 cursor-pointer">
+
+                <img
+                    src="assets/logos/neptune.webp"
+                    class="h-11 w-11 object-contain"
+                    alt="Logo">
+
+                <div>
+
+                    <h2 class="font-bold text-lg">
+                        CV. Neptune Eka Sarana
+                    </h2>
+                    
+
+                    <p class="text-xs text-cyan-300">
+                        Marine Safety
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Desktop Menu -->
+            <div
+                id="navbar-menu"
+                class="hidden md:flex items-center gap-8">
+
+                <button
+                    data-page="beranda"
+                    onclick="switchPage('beranda')"
+                    class="text-white hover:text-skyBlue">
+
+                    Beranda
+
+                </button>
+
+                <button
+                    data-page="profil"
+                    onclick="switchPage('profil')"
+                    class="text-white hover:text-skyBlue">
+
+                    Profil
+
+                </button>
+
+                <button
+                    data-page="produk"
+                    onclick="switchPage('produk')"
+                    class="text-white hover:text-skyBlue">
+
+                    Produk
+
+                </button>
+
+                <button
+                    data-page="layanan"
+                    onclick="switchPage('layanan')"
+                    class="text-white hover:text-skyBlue">
+
+                    Layanan
+
+                </button>
+
+                <button
+                    data-page="faq"
+                    onclick="switchPage('faq')"
+                    class="text-white hover:text-skyBlue">
+
+                    FAQ
+
+                </button>
+
+                <button
+                    data-page="sertifikasi"
+                    onclick="switchPage('sertifikasi')"
+                    class="text-white hover:text-skyBlue">
+
+                    Sertifikasi
+
+                </button>
+
+                <button
+                    data-page="kontak"
+                    onclick="switchPage('kontak')"
+                    class="text-white hover:text-skyBlue">
+
+                    Kontak
+
+                </button>
+
+            </div>
+
+            <!-- Hamburger -->
+            <button
+                onclick="toggleSidebar(true)"
+                class="md:hidden">
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-7 h-7"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <!-- Overlay -->
+    <div id="sidebarOverlay" onclick="toggleSidebar(false)"
+        class="fixed inset-0 bg-black/50 hidden opacity-0 transition-opacity duration-300 z-40">
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebarMenu" class="fixed top-0 right-0 h-full w-72 bg-blue-950 text-white
+translate-x-full transition-transform duration-300 z-50 shadow-2xl">
+
+        <div class="flex justify-between items-center p-6 border-b border-blue-800">
+
+            <h2 class="font-bold text-lg">
+                MENU
+            </h2>
+
+            <button onclick="toggleSidebar(false)" class="text-2xl">
+
+                ✕
+
+            </button>
+
+        </div>
+
+        <div class="flex flex-col">
+
+            <button onclick="handleMobileNav('beranda')" class="text-left px-6 py-4 hover:bg-blue-900">
+                Beranda
+            </button>
+
+            <button onclick="handleMobileNav('profil')" class="text-left px-6 py-4 hover:bg-blue-900">
+                Profil
+            </button>
+
+            <button onclick="handleMobileNav('produk')" class="text-left px-6 py-4 hover:bg-blue-900">
+                Produk
+            </button>
+
+            <button onclick="handleMobileNav('layanan')" class="text-left px-6 py-4 hover:bg-blue-900">
+                Layanan
+            </button>
+
+            <button onclick="handleMobileNav('faq')" class="text-left px-6 py-4 hover:bg-blue-900">
+                FAQ
+            </button>
+
+            <button onclick="handleMobileNav('sertifikasi')" class="text-left px-6 py-4 hover:bg-blue-900">
+                Sertifikasi
+            </button>
+
+            <button onclick="handleMobileNav('kontak')" class="text-left px-6 py-4 hover:bg-blue-900">
+                Kontak
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="h-16"></div>
+
+    <!-- KONTEN DINAMIS -->
+    <main id="content-frame" class="flex-grow opacity-100">
+        <div class="flex items-center justify-center h-64">
+            <p class="text-sm text-gray-400 animate-pulse">Menghubungkan ke sistem jangkar maritim...</p>
+        </div>
+    </main>
+
+    <!-- FOOTER UTAMA -->
+    <footer class="bg-[#0071BC] text-white pt-12 pb-6 border-t border-blue-400">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 pb-8 text-xs">
+            <div>
+                <h4 class="font-bold text-sm mb-4">CV. Neptune Eka Sarana</h4>
+                <p class="leading-relaxed text-blue-100">Penyedia solusi terintegrasi inspeksi tahunan alat keselamatan
+                    pelayaran dan pemadam kebakaran kapal (LSA-FFA) standar internasional.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4">LINKS</h4>
+                <ul class="space-y-2">
+                    <li><button onclick="switchPage('beranda')" class="hover:underline text-left">Beranda</button></li>
+                    <li><button onclick="switchPage('profil')" class="hover:underline text-left">Profil</button></li>
+                    <li><button onclick="switchPage('produk')" class="hover:underline text-left">Produk</button></li>
+                    <li><button onclick="switchPage('layanan')" class="hover:underline text-left">Layanan</button></li>
+                    <li><button onclick="switchPage('form-inquiry')" class="hover:underline text-left">Kontak</button>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4">OTHER LINK</h4>
+                <ul class="space-y-2 text-blue-100">
+                    <li><a href="#" class="hover:underline">Our Policies</a></li>
+                    <li><a href="#" class="hover:underline">General Terms and Conditions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm mb-4">NEWSLETTER</h4>
+                <p class="mb-3 text-blue-100">Subscribe us to receive our offers and updates your inbox directly.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Email Address"
+                        class="p-2 bg-black/20 border border-blue-300 rounded-l text-white placeholder-blue-200 focus:outline-none w-full">
+                    <button class="bg-blue-900 px-4 rounded-r font-bold hover:bg-black transition">➔</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 pt-6 border-t border-blue-400 flex flex-col sm:flex-row justify-between items-center text-[11px] text-blue-100">
+            <p>© 2026 CV. Neptune Eka Sarana. All rights reserved.</p>
+            <div class="flex space-x-4 mt-2 sm:mt-0">
+                <a href="#" class="hover:underline">Terms Of Use</a>
+                <a href="#" class="hover:underline">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MENAUTKAN LOGIKA INTI APP.JS (PENTING!) -->
+    <script src="js/app.js"></script>
+
+    <!-- LOGIKA ROUTER JAVASCRIPT UNTUK SPA -->
+    <script>
+        function switchPage(pageName) {
+            const frame = document.getElementById('content-frame');
+            frame.style.opacity = 0;
+
+            setTimeout(() => {
+                fetch(`views/${pageName}.html`)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Halaman tidak ditemukan');
+                        return response.text();
+                    })
+                    .then(html => {
+                        frame.innerHTML = html;
+                        frame.style.opacity = 1;
+                        window.scrollTo(0, 0);
+
+                        // Perbarui indikator menu aktif di navbar
+                        updateActiveNavbar(pageName);
+
+                        // Eksekusi fungsi inisialisasi data dari app.js
+                        if (pageName === 'produk' && typeof loadProductGrid === 'function')
+                            loadProductGrid();
+
+                        if (pageName === 'layanan' && typeof loadServiceGrid === 'function')
+                            loadServiceGrid();
+
+                        if (pageName === 'faq' && typeof initFaqPage === 'function')
+                            initFaqPage();
+                    })
+                    .catch(error => {
+                        frame.innerHTML = `<div class="p-12 text-center text-red-500 text-xs">⚠️ Gagal memuat halaman: ${error.message}</div>`;
+                        frame.style.opacity = 1;
+                    });
+            }, 200);
+        }
+
+        // Fungsi bantu untuk mengubah indikator warna navigasi menu aktif
+        function updateActiveNavbar(activePage) {
+            const links = document.querySelectorAll('#navbar-menu button');
+            links.forEach(link => {
+                if (link.getAttribute('data-page') === activePage) {
+                    link.classList.remove('text-white', 'hover:text-skyBlue');
+                    link.classList.add('text-skyBlue');
+                } else {
+                    link.classList.remove('text-skyBlue');
+                    link.classList.add('text-white', 'hover:text-skyBlue');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchPage('beranda');
+        });
+    </script>
+
+    <script>
+
+        function toggleSidebar(open) {
+
+            const menu = document.getElementById("sidebarMenu");
+            const overlay = document.getElementById("sidebarOverlay");
+
+            if (open) {
+
+                overlay.classList.remove("hidden");
+
+                setTimeout(() => {
+
+                    overlay.classList.remove("opacity-0");
+
+                    menu.classList.remove("translate-x-full");
+
+                }, 10);
+
+            } else {
+
+                overlay.classList.add("opacity-0");
+
+                menu.classList.add("translate-x-full");
+
+                setTimeout(() => {
+
+                    overlay.classList.add("hidden");
+
+                }, 300);
+
+            }
+
+        }
+
+        function handleMobileNav(page) {
+
+            toggleSidebar(false);
+
+            switchPage(page);
+
+        }
+
+    </script>
+</body>
+
+</html>

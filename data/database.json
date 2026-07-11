@@ -1,0 +1,149 @@
+{
+  "profile": {
+    "name": "CV. Neptune Eka Sarana",
+    "tagline": "Your Safety Is Our Priority",
+    "description": "CV. Neptune Eka Sarana didirikan pada 5 November 1997 di Kota Sorong. Ini adalah salah satu perusahaan terkemuka yang bergerak di bidang penyediaan peralatan keselamatan yang berlokasi di Indonesia, khususnya untuk keselamatan kelautan dan udara dengan spesialisasi lapangan dalam layanan dan pemeliharaan Alat Hemat Hidup.",
+    "hotline": "1234567890",
+    "email": "neptune@sarana.co.id",
+    "address": "Jl. Nangka",
+    "operational_hours": "Senin - Jumat | 08.00 - 17.00"
+  },
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Alkaline Battery Life Buoy Light",
+      "category": "LSA",
+      "image": "assets/products/Alkaline Battery Life Buoy Light.jpg",
+      "specification": "Intensitas Cahaya: > 2.0 Candela. Durasi Menyala: Minimal 2 jam penuh. Sistem Aktivasi: Otomatis menyala saat posisi tegak di air (Gravity/Tilt Sensor). Standar Regulasi: LSA Code & SOLAS 74/96. Material: Plastik ABS & Polycarbonate (Tahan UV & korosi). Fitur Tambahan: Lolos uji jatuh dari ketinggian 30 meter dan dilengkapi braket pemasangan."
+    },
+    {
+      "id": "prod-2",
+      "name": "Alkaline Battery Life Jacket Light",
+      "category": "LSA",
+      "image": "assets/products/Alkaline Battery Life Jacket Light.jpg",
+      "specification": "Intensitas Cahaya: > 0.75 Candela. Durasi Menyala: Minimal 8 jam penuh. Tipe Baterai: Alkaline eco-friendly. Sistem Aktivasi: Otomatis aktif saat terkena air (Water-activated) atau manual switch. Standar: MED/SOLAS approved. Desain: Kompak dengan klip pengait kuat untuk tali life jacket."
+    },
+    {
+      "id": "prod-3",
+      "name": "Crosby Shackle",
+      "category": "LSA",
+      "image": "assets/products/Crosby Shackle.jpg",
+      "specification": "Material: Carbon steel, quenched and tempered dengan alloy pins. Standard: Memenuhi kriteria performa ASME B30.26. Lapisan Akhir: Hot Dip Galvanized untuk ketahanan maksimal terhadap korosi air laut. Kegunaan: Pengait beban berat pada dewi-dewi (davit) dan sistem peluncuran sekoci keselamatan."
+    },
+    {
+      "id": "prod-4",
+      "name": "KHR type both sides of a canopied reversible inflatable liferaft",
+      "category": "Liferaft",
+      "image": "assets/products/KHR type both sides of a canopied reversible inflatable liferaft.jpg",
+      "specification": "Kapasitas: Beragam (6 hingga 50 orang). Tipe: Canopied Reversible (Dapat mengembang sempurna di kedua sisi jika terbalik). Standar Internasional: SOLAS 74/96, IMO HSC Code, dan LSA Code. Aplikasi: Cocok untuk instalasi pada kapal penumpang berkecepatan tinggi atau kapal kargo internasional."
+    },
+    {
+      "id": "prod-5",
+      "name": "KHA type throw-over board inflatable liferafts",
+      "category": "Liferaft",
+      "image": "assets/products/KHA type throw-over board inflatable liferafts.jpg",
+      "specification": "Metode Peluncuran: Throw-over board (Dilempar ke laut untuk mengembang otomatis via tali pemicu). Kelengkapan: Emergency Pack A atau Pack B (Makanan, minuman, obat-obatan, flare). Sertifikasi: CCS, EC (Med), ZC. Material: Kain karet berlapis polyurethane kualitas tinggi berkekuatan tarik tinggi."
+    },
+    {
+      "id": "prod-6",
+      "name": "First Aid Kit",
+      "category": "LSA",
+      "image": "assets/products/First Aid Kit.jpg",
+      "specification": "Kategori: Marine First Aid Kit kelas regulasi SOLAS. Isi Kotak: Perban steril, antiseptic wipes, gunting medis, plester, selimut darurat (thermal blanket), obat luka bakar, dan panduan pertolongan pertama maritim. Wadah: Kotak abs kedap air (waterproof case) berwarna mencolok dengan pengunci rapat."
+    },
+    {
+      "id": "prod-7",
+      "name": "Buoyant Smoke Signal",
+      "category": "LSA",
+      "image": "assets/products/Buoyant Smoke Signal.jpg",
+      "specification": "Durasi Emisi: Mengeluarkan asap oranye pekat selama minimal 3 menit. Standar: SOLAS 74/96 dan LSA Code. Aplikasi: Isyarat bahaya siang hari yang aman digunakan bahkan di permukaan air yang tertutup minyak atau bahan bakar."
+    },
+    {
+      "id": "prod-8",
+      "name": "Life Raft",
+      "category": "Liferaft",
+      "image": "assets/products/liferaft-standard.jpg",
+      "specification": "Tipe: Inflatable Life Raft standar pelayaran niaga. Struktur: Tabung ganda independen untuk menjamin rakit tetap mengapung meskipun salah satu tabung bocor. Akses: Dilengkapi tangga tali dan ramp pemuat untuk memudahkan kru kapal naik dari air."
+    },
+    {
+      "id": "prod-9",
+      "name": "Rocket Parachute Flare Signal",
+      "category": "LSA",
+      "image": "assets/products/Rocket Parachute Flare Signal.jpg",
+      "specification": "Ketinggian Luncur: Mencapai ketinggian minimal 300 meter. Intensitas Cahaya: Flare merah menyala dengan kekuatan > 30.000 Candela. Durasi Parasut: Turun perlahan dengan parasut selama minimal 40 detik. Standar Keamanan: Memenuhi regulasi SOLAS/LSA Code secara global."
+    }
+  ],
+  "services": [
+    {
+      "id": "srv-1",
+      "title": "Lifeboat Davit and Winch System",
+      "description": "Didukung oleh insinyur servis yang terampil, terlatih, dan bersertifikat dari beberapa produsen sekoci dan kapal penyelamat, kami memiliki kemampuan penuh untuk melakukan inspeksi tahunan dan servis 5 tahunan untuk peralatan Anda yang mencakup perombakan, pembersihan, dan sertifikasi untuk sekoci, sesuai IMO/MSC.402.",
+      "estimation": "3 - 5 Hari Kerja (Tergantung kompleksitas beban)",
+      "documents": "Sertifikat fabrikasi awal, Logbook inspeksi terakhir kapal"
+    },
+    {
+      "id": "srv-2",
+      "title": "Liferaft Services",
+      "description": "Perusahaan kami telah diaudit dan disetujui oleh masyarakat klasifikasi utama seperti BKI, LR, RINA dan SEACOM untuk melayani Anda dengan baik sebagai solusi layanan satu atap, kami berkolaborasi dengan mitra kami yang memiliki pengalaman kuat dan disetujui oleh masyarakat klasifikasi ABS, BV dan DNV-GL.",
+      "estimation": "2 - 4 Hari Kerja (Termasuk uji hydrostatic test tabung gas)",
+      "documents": "Surat ijin keselamatan kapal, Dokumen manufaktur liferaft"
+    },
+    {
+      "id": "srv-3",
+      "title": "Life Saving Appliance",
+      "description": "Keselamatan laut adalah akar dari perusahaan kami. Keselamatan Anda adalah prioritas kami. Kami menyediakan layanan untuk peralatan dan sistem penyelamat jiwa. Teknisi servis kami terampil, terlatih, dan bersertifikat di sektor keselamatan untuk memberikan yang terbaik kepada setiap pelanggan.",
+      "estimation": "Bervariasi (Sesuai kuantitas item LSA yang diinspeksi)",
+      "documents": "Daftar inventaris keselamatan dek kapal"
+    },
+    {
+      "id": "srv-4",
+      "title": "Fire Fighting Equipment & Systems Services",
+      "description": "Kami menawarkan layanan terbaik untuk sertifikasi ulang alat pemadam kebakaran, pengisian ulang dan uji hidro. Sistem alami kebakaran instalasi sistem CO2, sistem hidran kebakaran dan sprinkler dan inspeksi peralatan pemadam kebakaran.",
+      "estimation": "1 - 3 Hari Kerja",
+      "documents": "Logbook pemeliharaan PMK kapal tahunan"
+    },
+    {
+      "id": "srv-5",
+      "title": "Lifting Gear and Load Test",
+      "description": "Perusahaan kami memiliki kemampuan dan pengalaman yang luas dalam menyediakan layanan pengujian beban bukti peralatan pengangkat dan hoisting seperti derek lepas pantai, derek dek, balok derek laut, sekoci, perahu penyelamat, beban davit dan winch, gangway dan tangga akomodasi.",
+      "estimation": "3 - 7 Hari Kerja (Memerlukan water bag load test kit)",
+      "documents": "Sertifikat uji beban sebelumnya, Spesifikasi kapasitas SWL kargo"
+    },
+    {
+      "id": "srv-6",
+      "title": "Navigation and Communication",
+      "description": "Kami adalah agen perusahaan yang berwenang untuk melakukan Navigasi dan Komunikasi radio kapal laut, memastikan seluruh perangkat radar, GMDSS, AIS, dan sonar berfungsi sempurna demi keselamatan pelayaran internasional.",
+      "estimation": "1 - 2 Hari Kerja",
+      "documents": "Sertifikat Keselamatan Radio Kapal (SRK)"
+    }
+  ],
+"news":[
+{
+"id":"news-1",
+"title":"Inspeksi Tahunan Life Raft Berhasil Diselesaikan Sesuai Standar SOLAS",
+"date":"10 Juli 2026",
+"image":"assets/logos/ins.webp",
+"summary":"CV. Neptune Eka Sarana berhasil menyelesaikan inspeksi tahunan Life Raft sesuai standar SOLAS dan IMO.",
+"content1":"Kegiatan inspeksi dilaksanakan oleh teknisi bersertifikat dengan melakukan pemeriksaan menyeluruh terhadap kondisi fisik, sistem inflasi, perlengkapan darurat, hingga masa berlaku komponen keselamatan.",
+"content2":"Seluruh proses inspeksi dilakukan berdasarkan ketentuan SOLAS Chapter III dan IMO. Setelah pengujian selesai, setiap unit diberikan sertifikat kelayakan serta label inspeksi resmi.",
+"content3":"Sebagai perusahaan yang bergerak di bidang marine safety, CV. Neptune Eka Sarana terus berkomitmen memberikan layanan inspeksi, maintenance, dan sertifikasi dengan standar internasional.",
+"conclusion":"Dengan dilaksanakannya inspeksi berkala, pemilik kapal dapat memastikan seluruh peralatan keselamatan selalu siap digunakan dalam kondisi darurat."
+},
+  {
+    "id":"news-2",
+    "title":"Pelatihan Fire Fighting Equipment untuk Awak Kapal",
+    "date":"05 Juli 2026",
+    "image":"assets/logos/new2.webp",
+    "description":"Pelatihan fire fighting...",
+    "content":"Isi berita lengkap....."
+  },
+  {
+    "id":"news-3",
+    "title":"CV. Neptune Menambah Layanan Sertifikasi",
+    "date":"28 Juni 2026",
+    "image":"assets/logos/new3.jpg",
+    "description":"Penambahan layanan...",
+    "content":"Isi berita lengkap....."
+  }
+]
+}

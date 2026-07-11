@@ -1,0 +1,147 @@
+/* FAQ */
+
+.faq-btn{
+    transition:.3s ease;
+}
+
+.faq-btn:hover{
+    padding-left:10px;
+}
+
+.faq-answer{
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.faq-icon{
+    transition:transform .3s ease;
+}
+
+
+/* Sidebar */
+
+#sidebarMenu{
+
+    scrollbar-width:thin;
+    scrollbar-color:#444 #000;
+
+}
+
+#sidebarMenu::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+#sidebarMenu::-webkit-scrollbar-thumb{
+
+    background:#444;
+    border-radius:20px;
+
+}
+
+#sidebarMenu::-webkit-scrollbar-track{
+
+    background:#000;
+
+}
+
+
+#sidebarMenu button{
+
+    transition:.25s ease;
+
+}
+
+#sidebarMenu button:hover{
+
+    transform:translateX(10px);
+    padding-left:40px;
+    color:#38bdf8;
+
+}
+
+
+#sidebarMenu a{
+
+    transition:.25s ease;
+
+}
+
+#sidebarMenu a:hover{
+
+    color:#38bdf8;
+
+}
+
+
+#submenuCompany button{
+
+    transition:.25s ease;
+
+}
+
+#submenuCompany button:hover{
+
+    padding-left:60px;
+
+}
+
+
+/* Marquee */
+
+@keyframes marquee {
+
+    0%{
+        transform:translateX(0%);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+.animate-marquee{
+
+    display:flex;
+    width:max-content;
+    animation:marquee 30s linear infinite;
+    will-change:transform;
+
+}
+
+
+.animate-marquee:hover{
+
+    animation-play-state:paused;
+
+}
+
+
+/* Navbar */
+
+#navbar{
+    background: transparent;
+    transition: all .35s ease;
+}
+
+#navbar.scrolled{
+    background: rgba(11,36,71,.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+#navbar-menu{
+    margin-left:auto;
+}
+.cta-section{
+    opacity:0;
+    transform:translateY(80px);
+    transition:all .8s ease;
+}
+
+.cta-section.show{
+    opacity:1;
+    transform:translateY(0);
+}

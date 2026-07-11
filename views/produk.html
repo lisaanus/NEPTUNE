@@ -1,0 +1,46 @@
+<div class="relative bg-blue-900 text-white py-24 md:py-32 px-4 md:px-6 text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(11, 36, 71, 0.8), rgba(11, 36, 71, 0.8)), url('assets/banners/container.jpg');">
+    <h1 class="text-2xl font-bold tracking-wider uppercase">OUR PRODUCT</h1>
+</div>
+
+<div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="text-center mb-8">
+        <h2 class="text-2xl font-bold text-blue-950">PRODUK UNGGULAN</h2>
+        <p class="text-xs text-gray-400 mt-1">Beberapa produk alat keselamatan yang tersedia pada CV. Neptune Eka Sarana</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+        <div class="md:col-span-3 relative">
+            <input type="text" id="prod-search" placeholder="Cari Produk..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-950 text-sm">
+        </div>
+        <div>
+            <select class="w-full px-3 py-2 border border-gray-300 rounded text-sm text-gray-600 bg-white">
+                <option>Urutkan: Terbaru</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 justify-center sm:justify-start mb-8">
+        <button class="category-btn bg-blue-600 text-white text-xs font-semibold px-5 py-2 rounded-full shadow-sm" data-category="Semua Produk">Semua Produk</button>
+        <button class="category-btn bg-white text-gray-700 border border-gray-200 text-xs font-semibold px-5 py-2 rounded-full hover:bg-gray-50" data-category="LSA">LSA</button>
+        <button class="category-btn bg-white text-gray-700 border border-gray-200 text-xs font-semibold px-5 py-2 rounded-full hover:bg-gray-50" data-category="FFA">FFA</button>
+        <button class="category-btn bg-white text-gray-700 border border-gray-200 text-xs font-semibold px-5 py-2 rounded-full hover:bg-gray-50" data-category="Liferaft">Liferaft</button>
+    </div>
+
+    <div id="product-list-grid" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        </div>
+</div>
+
+<div id="quoteModal" class="fixed inset-0 bg-black/50 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-4">
+            <h3 class="text-lg font-bold text-blue-950">Minta Penawaran Harga</h3>
+            <button onclick="closeQuoteModal()" class="text-gray-400 hover:text-gray-600 text-xl">✕</button>
+        </div>
+        <p class="text-xs text-gray-500 mb-4">Silakan hubungi tim marketing kami melalui WhatsApp untuk mendapatkan penawaran harga terbaik untuk produk: <span id="modalProductName" class="font-bold text-blue-600"></span></p>
+        
+        <a id="whatsappBtn" href="#" target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition shadow-lg shadow-emerald-500/20">
+            <span> Hubungi via WhatsApp</span>
+        </a>
+    </div>
+</div>
+

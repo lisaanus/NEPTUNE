@@ -1,0 +1,131 @@
+<!-- ================================================== -->
+<!-- 1. BANNER UTAMA DETAIL LAYANAN                     -->
+<!-- ================================================== -->
+<div class="bg-blue-950 text-white py-12 px-6 text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(11,36,71,0.85), rgba(11,36,71,0.85)), url('assets/banners/container.jpg');">
+    <div class="max-w-4xl mx-auto">
+        <span class="text-[10px] font-bold tracking-widest bg-cyan-500 px-3 py-1 rounded text-white uppercase">Informasi Teknis</span>
+<h1 id="detail-service-title"
+class="text-xl md:text-2xl font-bold tracking-wider uppercase mt-3">
+
+Detail Layanan Pemeliharaan
+
+</h1>
+        <p class="text-xs text-gray-300 mt-1">Spesifikasi Prosedur Inspeksi & Re-Sertifikasi Alat Keselamatan Kapal</p>
+    </div>
+</div>
+
+<!-- ================================================== -->
+<!-- 2. KONTEN UTAMA (SPLIT LAYOUT)                     -->
+<!-- ================================================== -->
+<div class="max-w-6xl mx-auto px-6 py-12">
+    
+    <!-- Tombol Kembali yang Fleksibel -->
+    <button onclick="switchPage('layanan')" class="inline-flex items-center space-x-2 text-xs font-semibold text-blue-950 hover:text-cyan-500 transition mb-6 group">
+        <span>←</span> <span class="group-hover:underline">Kembali ke Daftar Layanan</span>
+    </button>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- ========================================== -->
+        <!-- KOLOM KIRI: DESKRIPSI & PROSEDUR TEKNIS    -->
+        <!-- ========================================== -->
+        <div class="lg:col-span-8 space-y-6 text-xs text-gray-700 leading-relaxed text-justify">
+            
+            <!-- Blok Ringkasan -->
+            <div class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm">
+                <h2 class="text-base font-bold text-blue-950 mb-3 border-b pb-2">Deskripsi Kerja Inspeksi</h2>
+<p id="detail-service-description" class="mb-3">
+
+Deskripsi layanan akan tampil di sini.
+
+</p>
+                <p>
+                    Kami menangani pengujian beban (<em>load testing</em>), pengujian kedap udara, pengecekan logistik darurat cadangan, hingga perbaikan struktural mekanis menggunakan suku cadang original yang diakui oleh badan klasifikasi kapal internasional.
+                </p>
+            </div>
+
+            <!-- Blok Alur Prosedur Kerja -->
+            <div class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm">
+                <h2 class="text-base font-bold text-blue-950 mb-4 border-b pb-2">Tahapan Kerja Standar Operasional (SOP)</h2>
+                
+                <div class="space-y-4 font-medium">
+                    <!-- Tahap 1 -->
+                    <div class="flex items-start space-x-3">
+                        <div class="w-5 h-5 bg-blue-950 text-white font-bold rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5">1</div>
+                        <div>
+                            <h4 class="text-blue-950 font-bold mb-0.5">Pemeriksaan Visual Awal & Pengujian Fungsi</h4>
+                            <p class="text-gray-500 font-normal">Mendeteksi keretakan fisik, kebocoran segel, korosi material karatan, dan memeriksa masa kedaluwarsa baterai/logistik dalam alat.</p>
+                        </div>
+                    </div>
+                    <!-- Tahap 2 -->
+                    <div class="flex items-start space-x-3">
+                        <div class="w-5 h-5 bg-blue-950 text-white font-bold rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5">2</div>
+                        <div>
+                            <h4 class="text-blue-950 font-bold mb-0.5">Hydrostatic & Pressure Testing</h4>
+                            <p class="text-gray-500 font-normal">Pengujian tekanan tinggi untuk tabung gas kembung rakit penolong (ILR) maupun tabung pemadam api guna memastikan dinding baja tidak keropos.</p>
+                        </div>
+                    </div>
+                    <!-- Tahap 3 -->
+                    <div class="flex items-start space-x-3">
+                        <div class="w-5 h-5 bg-blue-950 text-white font-bold rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5">3</div>
+                        <div>
+                            <h4 class="text-blue-950 font-bold mb-0.5">Refilling & Penggantian Logistik Dalam</h4>
+                            <p class="text-gray-500 font-normal">Pengisian ulang media pemadam api (Foam/CO2/Powder) serta penggantian obat-obatan P3K, air minum darurat, dan baterai radio suar yang telah kadaluwarsa.</p>
+                        </div>
+                    </div>
+                    <!-- Tahap 4 -->
+                    <div class="flex items-start space-x-3">
+                        <div class="w-5 h-5 bg-blue-950 text-white font-bold rounded-full flex items-center justify-center text-[10px] shrink-0 mt-0.5">4</div>
+                        <div>
+                            <h4 class="text-blue-950 font-bold mb-0.5">Penerbitan Sertifikat Kelaikan (Re-Sertifikasi)</h4>
+                            <p class="text-gray-500 font-normal">Penempelan stiker uji kelayakan resmi dan penyerahan lembar dokumen sertifikat kelaikan laut yang diakui oleh Syahbandar dan Badan Klasifikasi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- KOLOM KANAN: RINGKASAN & CALL TO ACTION    -->
+        <!-- ========================================== -->
+        <div class="lg:col-span-4 space-y-4">
+            
+            <!-- Kotak Informasi Singkat -->
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm">
+                <h3 class="text-xs font-bold text-blue-950 tracking-wider uppercase mb-3">Ringkasan Layanan</h3>
+                <table class="w-full text-[11px]">
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 text-gray-400">Standar Regulasi</td>
+                            <td class="py-2 font-semibold text-right text-blue-950">SOLAS, IMO, ISO</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 text-gray-400">Interval Uji</td>
+                            <td class="py-2 font-semibold text-right text-blue-950">1 Tahunan / 5 Tahunan</td>
+                        </tr>
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 text-gray-400">Lokasi Kerja</td>
+                            <td class="py-2 font-semibold text-right text-blue-950">Workshop / On-Board</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 text-gray-400">Sertifikasi Kelas</td>
+                            <td class="py-2 font-semibold text-right text-blue-950">BKI, DNV, ABS, Lloyd</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Kotak Aksi Penawaran Harga -->
+            <div class="bg-blue-950 text-white border border-blue-900 rounded-xl p-5 text-center shadow-sm flex flex-col items-center">
+                <h3 class="font-bold text-sm mb-1">Butuh Estimasi Biaya?</h3>
+                <p class="text-[10px] text-gray-400 mb-4 px-2">Kirimkan spesifikasi jumlah armada dan jenis alat keselamatan Anda untuk mendapatkan penawaran harga terbaik.</p>
+                
+                <button onclick="switchPage('form-inquiry')" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2.5 rounded text-xs transition uppercase tracking-wider shadow-sm">
+                    📝 Minta Penawaran Harga
+                </button>
+            </div>
+            
+        </div>
+
+    </div>
+</div>

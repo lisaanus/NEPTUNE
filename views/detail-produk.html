@@ -1,0 +1,152 @@
+<!-- Banner -->
+<section class="bg-blue-950 text-white py-12 text-center bg-cover bg-center"
+style="background-image:
+linear-gradient(rgba(11,36,71,.85),rgba(11,36,71,.85)),
+url('assets/banners/container.jpg')">
+
+    <h1 class="text-3xl font-bold tracking-widest uppercase">
+        Product Detail
+    </h1>
+
+</section>
+
+
+<!-- Detail Produk -->
+<section class="max-w-7xl mx-auto px-6 py-14">
+
+    <div class="grid lg:grid-cols-3 gap-10">
+
+        <!-- ================= LEFT ================= -->
+
+        <div>
+
+            <div class="bg-white rounded-xl shadow border p-6">
+
+                <img
+                    id="detail-prod-img"
+                    src=""
+                    alt=""
+                    class="w-full h-80 object-contain">
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CENTER ================= -->
+
+        <div>
+
+            <h2
+                id="detail-prod-name"
+                class="text-2xl font-bold text-blue-950 mb-3">
+
+            </h2>
+
+            <span
+                id="detail-prod-category"
+                class="inline-block
+                bg-blue-100
+                text-blue-900
+                text-xs
+                font-bold
+                px-3
+                py-1
+                rounded-full
+                mb-6">
+            </span>
+
+            <div>
+
+                <h3 class="font-bold mb-3">
+                    Deskripsi Produk
+                </h3>
+
+                <p
+                    id="detail-prod-desc"
+                    class="text-sm text-gray-600 leading-7 text-justify">
+
+                </p>
+
+            </div>
+
+
+            <div class="mt-8">
+
+                <h3 class="font-bold mb-3">
+                    Spesifikasi
+                </h3>
+
+                <ul
+                    id="detail-prod-spec"
+                    class="text-sm
+                    text-gray-600
+                    list-disc
+                    pl-5
+                    space-y-2">
+
+                </ul>
+
+            </div>
+
+
+            <div class="mt-10 grid gap-3">
+
+                <button
+                    onclick="openInquiryForm()"
+                    class="bg-blue-700
+                    hover:bg-blue-800
+                    text-white
+                    py-3
+                    rounded-lg
+                    font-semibold">
+
+                    Request Penawaran
+
+                </button>
+
+
+                <button
+                    onclick="redirectToWhatsApp()"
+                    class="border
+                    border-blue-700
+                    text-blue-700
+                    hover:bg-blue-700
+                    hover:text-white
+                    py-3
+                    rounded-lg
+                    font-semibold">
+
+                    Hubungi via WhatsApp
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= RIGHT ================= -->
+
+        <div>
+
+            <div class="bg-gray-50 rounded-xl border p-5">
+
+                <h3 class="font-bold text-blue-950 mb-4">
+                    Produk Lainnya
+                </h3>
+
+                <div
+                    id="related-products"
+                    class="space-y-3">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
