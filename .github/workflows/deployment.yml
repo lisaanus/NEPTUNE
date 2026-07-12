@@ -1,17 +1,4 @@
-- name: Debug remote environment
-        env:
-          STB_HOST: ${{ secrets.STB_HOST }}
-        run: |
-          ssh -F $HOME/.ssh/config "$STB_HOST" '
-            whoami
-            echo "HOME=$HOME"
-            echo "PATH=$PATH"
-            ls -la $HOME/.bun/bin 2>&1
-            export BUN_INSTALL="$HOME/.bun"
-            export PATH="$BUN_INSTALL/bin:$PATH"
-            echo "PATH after export=$PATH"
-            which bun
-          'name: Deployment
+name: Deployment
 
 on:
   push:
@@ -66,14 +53,14 @@ jobs:
             --exclude='.git' \
             --exclude='.github' \
             --exclude='node_modules' \
-            -e "ssh -F $HOME/.ssh/config" \
+            -e "ssh -F ~/.ssh/config" \
             . "$STB_HOST:~/app/"
 
       - name: Install deps on server, restart, and health check
         env:
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
-          ssh -F $HOME/.ssh/config "$STB_HOST" '
+          ssh -F ~/.ssh/config "$STB_HOST" '
             set -e
             cd ~/app
             bun install --production
@@ -81,7 +68,7 @@ jobs:
             sleep 2
             curl -fsS http://localhost:3000/ > /dev/null
           '
-          
+
       - name: Cleanup SSH key
         if: always()
         run: rm -f ~/.ssh/deploy_key
