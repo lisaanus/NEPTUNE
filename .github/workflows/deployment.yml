@@ -26,6 +26,20 @@ jobs:
           SSH_USER: ${{ secrets.SSH_USER }}
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          rsync -avz --delete \
+            --exclude='.git' \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
+            . $SSH_USER@$STB_HOST:~/app/
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$STB_HOST 'sudo systemctl restart bun-app.service'
+          rm -f ~/.ssh/deploy_key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          STB_HOST: ${{ secrets.STB_HOST }}
+        run: |
           echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
           rsync -avz --delete -e "ssh -i private_key -o StrictHostKeyChecking=no" . $SSH_USER@$STB_HOST:~/app/
           ssh -i private_key -o StrictHostKeyChecking=no $SSH_USER@$STB_HOST 'sudo systemctl restart bun-app.service'
