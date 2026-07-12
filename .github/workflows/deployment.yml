@@ -1,0 +1,31 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "${HOME}/.bun/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Deploy to Server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          STB_HOST: ${{ secrets.STB_HOST }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
+          rsync -avz --delete -e "ssh -i private_key -o StrictHostKeyChecking=no" . $SSH_USER@$STB_HOST:~/app/
+          ssh -i private_key -o StrictHostKeyChecking=no $SSH_USER@$STB_HOST 'sudo systemctl restart bun-app.service'
