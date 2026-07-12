@@ -20,40 +20,53 @@ jobs:
       - name: Install dependencies (validate lockfile)
         run: bun install
 
+      - name: Install cloudflared
+        run: |
+          curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          sudo dpkg -i cloudflared.deb
+
       - name: Setup SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_USER: ${{ secrets.SSH_USER }}
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -H "$STB_HOST" >> ~/.ssh/known_hosts
+
+          cat >> ~/.ssh/config <<EOF
+          Host $STB_HOST
+            HostName $STB_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/deploy_key
+            ProxyCommand cloudflared access ssh --hostname %h
+            StrictHostKeyChecking no
+          EOF
+          chmod 600 ~/.ssh/config
 
       - name: Sync files to server
         env:
-          SSH_USER: ${{ secrets.SSH_USER }}
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
           rsync -avz --delete \
             --exclude='.git' \
             --exclude='.github' \
             --exclude='node_modules' \
-            -e "ssh -i ~/.ssh/deploy_key" \
-            . "$SSH_USER@$STB_HOST:~/app/"
+            -e "ssh -F ~/.ssh/config" \
+            . "$STB_HOST:~/app/"
 
       - name: Install deps on server, restart, and health check
         env:
-          SSH_USER: ${{ secrets.SSH_USER }}
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
-          ssh -i ~/.ssh/deploy_key "$SSH_USER@$STB_HOST" '
+          ssh -F ~/.ssh/config "$STB_HOST" '
             set -e
             cd ~/app
             bun install --production
             sudo systemctl restart bun-app.service
             sleep 2
-            curl -fsS http://localhost:4500/ > /dev/null
+            curl -fsS http://localhost:3000/ > /dev/null
           '
 
       - name: Cleanup SSH key
