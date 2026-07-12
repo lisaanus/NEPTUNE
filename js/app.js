@@ -1189,7 +1189,7 @@ fetch("./data/database.json")
 
         if(!news) return;
 
-        switchPage("berita-detail");
+        switchPage("switchPage("detail-berita");");
 
         setTimeout(()=>{
 
@@ -1232,17 +1232,6 @@ fetch("./data/database.json")
     });
 
 }
-setTimeout(()=>{
-
-    document.getElementById("service-title").textContent=service.title;
-
-    document.getElementById("service-description").textContent=service.description;
-
-    document.getElementById("service-estimation").textContent=service.estimation;
-
-    document.getElementById("service-document").textContent=service.documents;
-
-},200);
 
 // ===============================
 // GLOBAL EXPORT
