@@ -17,29 +17,45 @@ jobs:
           curl -fsSL https://bun.sh/install | bash
           echo "${HOME}/.bun/bin" >> $GITHUB_PATH
 
-      - name: Install dependencies
+      - name: Install dependencies (validate lockfile)
         run: bun install
 
-      - name: Deploy to Server
+      - name: Setup SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_USER: ${{ secrets.SSH_USER }}
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          rsync -avz --delete \
-            --exclude='.git' \
-            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no" \
-            . $SSH_USER@$STB_HOST:~/app/
-          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no $SSH_USER@$STB_HOST 'sudo systemctl restart bun-app.service'
-          rm -f ~/.ssh/deploy_key
+          ssh-keyscan -H "$STB_HOST" >> ~/.ssh/known_hosts
+
+      - name: Sync files to server
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_USER: ${{ secrets.SSH_USER }}
           STB_HOST: ${{ secrets.STB_HOST }}
         run: |
-          echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
-          rsync -avz --delete -e "ssh -i private_key -o StrictHostKeyChecking=no" . $SSH_USER@$STB_HOST:~/app/
-          ssh -i private_key -o StrictHostKeyChecking=no $SSH_USER@$STB_HOST 'sudo systemctl restart bun-app.service'
+          rsync -avz --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            -e "ssh -i ~/.ssh/deploy_key" \
+            . "$SSH_USER@$STB_HOST:~/app/"
+
+      - name: Install deps on server, restart, and health check
+        env:
+          SSH_USER: ${{ secrets.SSH_USER }}
+          STB_HOST: ${{ secrets.STB_HOST }}
+        run: |
+          ssh -i ~/.ssh/deploy_key "$SSH_USER@$STB_HOST" '
+            set -e
+            cd ~/app
+            bun install --production
+            sudo systemctl restart bun-app.service
+            sleep 2
+            curl -fsS http://localhost:4500/ > /dev/null
+          '
+
+      - name: Cleanup SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
