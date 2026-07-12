@@ -34,15 +34,15 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
 
-    cat >> ~/.ssh/config <<EOF
-    Host $STB_HOST
-      HostName $STB_HOST
-      User ${{ secrets.SSH_USER }}
-      IdentityFile ~/.ssh/deploy_key
-      ProxyCommand cloudflared access ssh --hostname %h
-      StrictHostKeyChecking no
-    EOF
-    chmod 600 ~/.ssh/config
+          cat >> ~/.ssh/config <<EOF
+          Host $STB_HOST
+            HostName $STB_HOST
+            User ${{ secrets.SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            ProxyCommand cloudflared access ssh --hostname %h
+            StrictHostKeyChecking no
+          EOF
+          chmod 600 ~/.ssh/config
       - name: Sync files to server
         env:
           SSH_USER: ${{ secrets.SSH_USER }}
