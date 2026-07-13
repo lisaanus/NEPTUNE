@@ -1179,57 +1179,58 @@ window.addEventListener("scroll", () => {
 
 });
 
-function viewNewsDetail(id){
+function viewNewsDetail(id) {
 
-fetch("./data/database.json")
-    .then(res=>res.json())
-    .then(data=>{
+    fetch("./data/database.json")
+        .then(res => res.json())
+        .then(data => {
 
-        const news=data.news.find(item=>item.id===id);
+            const news = data.news.find(item => item.id === id);
 
-        if(!news) return;
+            if (!news) return;
 
-        switchPage("switchPage("detail-berita");");
+            switchPage("detail-berita");
 
-        setTimeout(()=>{
+            setTimeout(() => {
 
-            document.getElementById("detail-news-image").src=news.image;
-            document.getElementById("detail-news-title").textContent=news.title;
-            document.getElementById("detail-news-date").textContent=news.date;
-            document.getElementById("sidebar-date").textContent=news.date;
-            document.getElementById("detail-news-summary").textContent=news.summary;
+                document.getElementById("detail-news-image").src = news.image;
+                document.getElementById("detail-news-title").textContent = news.title;
+                document.getElementById("detail-news-date").textContent = news.date;
+                document.getElementById("sidebar-date").textContent = news.date;
+                document.getElementById("detail-news-summary").textContent = news.summary;
 
-            document.getElementById("detail-news-content").innerHTML=`
-                <p>${news.content1}</p>
+                document.getElementById("detail-news-content").innerHTML = `
+                    <p>${news.content1}</p>
 
-                <h2 class="text-3xl font-bold text-blue-950">
-                    Proses Pelaksanaan
-                </h2>
+                    <h2 class="text-3xl font-bold text-blue-950 mt-8 mb-4">
+                        Proses Pelaksanaan
+                    </h2>
 
-                <p>${news.content2}</p>
+                    <p>${news.content2}</p>
 
-                <h2 class="text-3xl font-bold text-blue-950">
-                    Komitmen CV. Neptune Eka Sarana
-                </h2>
+                    <h2 class="text-3xl font-bold text-blue-950 mt-8 mb-4">
+                        Komitmen CV. Neptune Eka Sarana
+                    </h2>
 
-                <p>${news.content3}</p>
+                    <p>${news.content3}</p>
 
-                <div class="bg-blue-50 border-l-4 border-cyan-500 p-6 rounded">
+                    <div class="bg-blue-50 border-l-4 border-cyan-500 p-6 rounded mt-8">
 
-                    <strong class="text-blue-950">
-                        Kesimpulan
-                    </strong>
+                        <strong class="text-blue-950">
+                            Kesimpulan
+                        </strong>
 
-                    <p class="mt-3">
-                        ${news.conclusion}
-                    </p>
+                        <p class="mt-3">
+                            ${news.conclusion}
+                        </p>
 
-                </div>
-            `;
+                    </div>
+                `;
 
-        },200);
+            }, 300);
 
-    });
+        })
+        .catch(err => console.error(err));
 
 }
 
